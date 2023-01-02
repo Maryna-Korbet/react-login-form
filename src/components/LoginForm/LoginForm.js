@@ -1,4 +1,5 @@
 import { Formik, Form, Field } from 'formik';
+import css from 'components/LoginForm/LoginForm.module.css';
 
 const initialValues = {
     login: '',
@@ -17,15 +18,15 @@ export const LoginForm = () => {
             initialValues={initialValues}
             onSubmit={handleSubmit}
         >
-        <Form autoComplete="off">
+        <Form autoComplete="off" >
             <label htmlFor="login">
                 Login
-                <Field type="text" name="login" />
+                    <Field type="text" name="login" className={css.input} />
                 </label>
                 
             <label htmlFor="password">
                 Password
-                <Field type="password" name="password" />
+                <Field type="password" name="password" className={css.input}/>
                 </label>
                 
             <button type="submit">Submit</button>
