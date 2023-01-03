@@ -1,5 +1,6 @@
 import { Formik, Form, Field } from 'formik';
 import css from 'components/LoginForm/LoginForm.module.css';
+import * as yup from 'yup';
 
 const initialValues = {
     login: '',
