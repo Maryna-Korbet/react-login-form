@@ -2,6 +2,11 @@ import { Formik, Form, Field } from 'formik';
 import css from 'components/LoginForm/LoginForm.module.css';
 import * as yup from 'yup';
 
+const schema = yup.object().shape({
+    login: yup.string().required(),
+    password: yup.string().min(6).max(16).required(),
+});
+
 const initialValues = {
     login: '',
     password: '',
@@ -17,6 +22,7 @@ export const LoginForm = () => {
     return (
         <Formik
             initialValues={initialValues}
+            validationSchema={schema}
             onSubmit={handleSubmit}
         >
         <Form autoComplete="off" >
